@@ -25,14 +25,14 @@ function LoginFormObjectState() {
                 <label>
                     Username:
                      <br/>
-                     <input type="text" name="username" value={form.username} onChange={updateField}/>
+                     <input type="text" autocomplete="off" name="username" value={form.username} onChange={updateField}/>
                 </label>
                 <br />
                 <br />
                 <label>
                     Password:
                      <br />
-                    <input type="password" name="password" value={form.password} onChange={updateField}/>
+                    <input type="password" autocomplete="off" name="password" value={form.password} onChange={updateField}/>
                 </label>
                 <br />
                 <button>Submit</button>

@@ -15,13 +15,13 @@ function LoginForm() {
             <form onSubmit={printValues}>
                 <label>
                     Username{' '}
-                     <input type="text" name="username" value={username} onChange={e => setUsername(e.target.value)}/>
+                    <input type="text" autocomplete="off" name="username" value={username} onChange={e => setUsername(e.target.value)}/>
                 </label>
                 <br />
                 <br/>
                 <label>
                     Password{' '}
-                     <input name="password" type="password" value={password} onChange={e => setPassword(e.target.value)}/>
+                    <input name="password" autocomplete="off" type="password" value={password} onChange={e => setPassword(e.target.value)}/>
                 </label>
                 <br />
                 <br/>

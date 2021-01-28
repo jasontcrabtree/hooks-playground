@@ -50,7 +50,7 @@ function ShoppingList() {
                     Add to List
                         <br />
                     {/* inputRef creates a persistent reference to a DOM node (in this case, our input). React then persists the value between re-renders */}
-                        <input ref={inputRef} />
+                    <input ref={inputRef} autocomplete="off" />
                     </label>
                 </form>
                 <ul>

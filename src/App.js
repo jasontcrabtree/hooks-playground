@@ -40,7 +40,7 @@ const App = () => {
       <label htmlFor="input">
         Input
       {/* NULL onChange as a placeholder */}
-        <input name="input" type="text" onChange={(e) => setNameOfDish(e.target.value)} value={nameOfDish} />
+        <input name="input" autocomplete="off" type="text" onChange={(e) => setNameOfDish(e.target.value)} value={nameOfDish} />
       {/* Value typically state etc. or something e.g. this.state.value */}
         </label>
         <button>Submit</button>

@@ -26,7 +26,7 @@ function ListOfThings() {
                 <label htmlFor="item">
                     Add Item to List
                      <br/>
-                    <input type="text" name="item" value={itemName} onChange={setName}/>
+                    <input type="text" autocomplete="off" name="item" value={itemName} onChange={setName}/>
                 </label>
             </form>
             <ul>
