@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 // import Refactor from './Toggle';
 import ToggleRefactored from './ToggleRefactored';
+import LessText from './LessText'
+import StepTracker from './StepTracker';
+import ListOfThings from './ListOfThings';
+import LoginForm from './LoginForm';
+import LoginFormObjectState from './LoginFormObjectState';
+import Counter from './Counter';
+import ShoppingList from './ShoppingListUseReducer';
 // useState can only be used on function based components
 
 // NOTES
@@ -25,9 +32,7 @@ const App = () => {
       <h1>Level Up Dishes</h1>
       {/* <Refactor /> */}
       <ToggleRefactored />
-      <br/>
       <hr />
-      <br/>
       <form onSubmit={(e) => {
         e.preventDefault();
         formSubmit(nameOfDish, setNameOfDish);
@@ -35,13 +40,27 @@ const App = () => {
       <label htmlFor="input">
         Input
       {/* NULL onChange as a placeholder */}
-        <input name="input" type="text" onChange={(e) => setNameOfDish(e.target.value)} value={nameOfDish} autoComplete="off" />
+        <input name="input" type="text" onChange={(e) => setNameOfDish(e.target.value)} value={nameOfDish} />
       {/* Value typically state etc. or something e.g. this.state.value */}
         </label>
         <button>Submit</button>
       </form>
       <p>{nameOfDish}</p>
-
+      <hr />
+      <LessText text={`Yong Peng bread, or also known as Hock Chew style bread, is a type of bread baked by the Chinese people of Yong Peng. It is a type of traditional bread, in round shape, baked with yeasts, and comes in 2 varieties. The plain sweetened version is the mainstream type, while the sesame type is the other type. This bread is very unusual because it is still being baked and produced using traditional methods. Often wrapped in thin plastic and newspaper, it does not have any labels, nor any nutritional and calorie contents. It can be kept for a very long timely by storing it in a freezer.
+`} maxLength={33} />
+      <hr />
+      <StepTracker />
+      <hr />
+      <ListOfThings />
+      <hr />
+      <LoginForm />
+      <hr />
+      <LoginFormObjectState />
+      <hr />
+      <Counter />
+      <hr />
+      <ShoppingList/>
     </div>
   );
 };

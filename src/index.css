@@ -105,3 +105,15 @@ button {
 button:hover {
   background: #fbc89d;
 }
+
+hr {
+  margin: 4rem 0px;
+}
+
+.main-wrapper > * + * {
+  margin-top: 96px;
+}
+
+.main-wrapper:last-child {
+  margin-bottom: 240px;
+}
