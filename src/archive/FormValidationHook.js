@@ -14,7 +14,7 @@ I've decided to store them in an object where the key refers to the attribute's 
 
 import { useState } from 'react';
 
-export const useFormValidationHook = (options) => {
+export const UseFormValidationHook = (options) => {
   // we use useState to manage the state of our form
   // we set the default state to options.initialValues if present (optional chaining) or an empty object
   const [data, setData] = useState(options?.initialValues || {});
@@ -45,19 +45,19 @@ export const useFormValidationHook = (options) => {
         const value = data[key];
         const validation = validations[key];
         if (validation?.required?.value && !value) {
-          valid = false;
+          // valid = false;
           newErrors[key] = validation?.required?.message;
         }
 
         const pattern = validation?.pattern;
         if (pattern?.value && !RegExp(pattern.value).test(value)) {
-          valid = false;
+          // valid = false;
           newErrors[key] = pattern.message;
         }
 
         const custom = validation?.custom;
         if (custom?.isValid && !custom.isValid(value)) {
-          valid = false;
+          // valid = false;
           newErrors[key] = custom.message;
         }
       }

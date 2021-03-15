@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 // import Refactor from './Toggle';
-import ToggleRefactored from './ToggleRefactored';
-import LessText from './LessText';
-import StepTracker from './StepTracker';
-import ListOfThings from './ListOfThings';
-import LoginForm from './LoginForm';
-import LoginFormObjectState from './LoginFormObjectState';
-import Counter from './Counter';
-import ShoppingList from './ShoppingListUseReducer';
-import FormValidationHook from './FormValidationHook';
+import ToggleRefactored from './UseStateToggleRefactored';
+import LessText from './UseStateLessText';
+import StepTracker from './UseStateStepTracker';
+import ListOfThings from './UseStateListOfThings';
+import LoginForm from './UseStateLoginForm';
+import LoginFormObjectState from './UseStateLoginFormObjectState';
+import Counter from './UseReducerCounter';
+import ShoppingList from './UseReducerShoppingList';
+import { UseFormValidationHook } from './archive/FormValidationHook';
+import { UserContext } from './UseContextDemoAuth';
+import AuthApp from './UseContextAuthApp';
+import UnauthApp from './UseContextUnauthApp';
 // import ArrayState from './ArrayState';
 // useState can only be used on function based components
 
@@ -36,6 +39,9 @@ const App = () => {
   // -----
   // Set the default state as an empty string
   const [nameOfDish, setNameOfDish] = useState('');
+
+  // Import our user context from UseContextDemoAuth and call context to render the appropriate thing based on context
+  const { user } = useContext(UserContext);
 
   return (
     <div className="main-wrapper">
@@ -84,7 +90,9 @@ const App = () => {
       <ShoppingList />
       <hr />
       {/* <ArrayState /> */}
-      <useFormValidationHook />
+      {/* <UseFormValidationHook /> */}
+
+      {user.auth ? <AuthApp /> : <UnauthApp />}
     </div>
   );
 };
